@@ -1,5 +1,7 @@
 from fastapi import FastAPI, Query
 from .app import PremiumFiscalAssistant
+import os 
+
 
 app = FastAPI()
 
