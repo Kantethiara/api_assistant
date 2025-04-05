@@ -3,6 +3,9 @@ from .app import PremiumFiscalAssistant
 
 app = FastAPI()
 
+PORT = int(os.environ.get("PORT", 8000))  # Important pour Render
+
+
 # Initialisation de l'assistant fiscal
 assistant = PremiumFiscalAssistant()
 
