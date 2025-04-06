@@ -1,0 +1,21 @@
+{
+  "build": {
+    "builder": "nixpacks",
+    "config": {
+      "phases": {
+        "setup": {
+          "nixPkgs": ["python3", "gcc"]
+        },
+        "install": {
+          "commands": [
+            "python -m venv /opt/venv",
+            ". /opt/venv/bin/activate && pip install -r requirements.txt"
+          ]
+        }
+      },
+      "start": {
+        "cmd": "uvicorn src.api:app --host 0.0.0.0 --port ${PORT}"
+      }
+    }
+  }
+}
